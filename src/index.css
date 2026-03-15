@@ -1,0 +1,394 @@
+/* Love & Romance Design System - Premium Wedding Assessment */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Romantic Love Color Palette */
+    --background: 0 0% 100%; /* Pure white */
+    --foreground: 340 30% 25%; /* Deep rose-gray */
+
+    --card: 0 0% 100%;
+    --card-foreground: 340 30% 25%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 340 30% 25%;
+
+    /* Primary - Romantic Rose */
+    --primary: 340 82% 62%; /* Romantic rose pink */
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 340 100% 85%;
+    --primary-lighter: 340 100% 95%;
+
+    /* Masculine - Deep Burgundy */
+    --masculine: 350 65% 45%; /* Rich burgundy */
+    --masculine-light: 350 50% 85%;
+    --masculine-foreground: 0 0% 100%;
+
+    /* Feminine - Soft Blush */
+    --feminine: 345 100% 75%; /* Soft blush pink */
+    --feminine-light: 345 100% 95%;
+    --feminine-foreground: 340 30% 25%;
+    --feminine-soft: 345 70% 98%;
+
+    --secondary: 340 20% 93%; /* Soft rose-grey */
+    --secondary-foreground: 340 25% 30%;
+
+    --muted: 340 30% 96%; /* Very light rose */
+    --muted-foreground: 340 16% 47%;
+
+    --accent: 335 75% 60%; /* Rose gold */
+    --accent-foreground: 0 0% 100%;
+
+    /* Romantic Status Colors */
+    --success: 150 60% 55%; /* Soft emerald (love growing) */
+    --success-foreground: 0 0% 100%;
+    --success-light: 150 50% 95%;
+
+    --warning: 25 90% 60%; /* Warm coral (needs attention) */
+    --warning-foreground: 0 0% 100%;
+    --warning-light: 25 100% 95%;
+
+    --destructive: 0 75% 58%; /* Passionate red */
+    --destructive-foreground: 0 0% 100%;
+    --destructive-light: 0 85% 97%;
+
+    --border: 340 20% 91%; /* Soft rose border */
+    --input: 340 20% 91%;
+    --ring: 340 82% 62%; /* Rose pink focus ring */
+
+    /* Love Compatibility Colors */
+    --compatibility-green: 150 60% 55%; /* Hearts aligned */
+    --compatibility-yellow: 25 90% 60%; /* Discussion needed */
+    --compatibility-red: 0 75% 58%; /* Priority conversation */
+    --compatibility-gray: 340 16% 47%;
+
+    /* Romantic Love Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(340 82% 62%) 0%, hsl(350 90% 70%) 30%, hsl(10 95% 75%) 60%, hsl(25 100% 80%) 100%); /* Romantic sunset: rose to coral to peach */
+    --gradient-masculine: linear-gradient(135deg, hsl(350 65% 45%) 0%, hsl(340 82% 62%) 100%); /* Burgundy to rose */
+    --gradient-feminine: linear-gradient(135deg, hsl(345 100% 75%) 0%, hsl(340 100% 95%) 100%); /* Blush to soft pink */
+    --gradient-romantic: linear-gradient(135deg, hsl(340 82% 62%) 0%, hsl(345 100% 75%) 50%, hsl(25 100% 85%) 100%); /* Rose to blush to peach */
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(340 40% 98%) 100%); /* White to soft rose */
+    --gradient-success: linear-gradient(135deg, hsl(150 60% 55%) 0%, hsl(160 65% 60%) 100%); /* Love growing */
+    --gradient-premium: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(340 100% 98%) 50%, hsl(0 0% 100%) 100%); /* Premium romantic white */
+    --gradient-overlay: linear-gradient(135deg, hsl(340 82% 62% / 0.08) 0%, hsl(25 100% 80% / 0.05) 100%); /* Soft romantic overlay */
+
+    /* Romantic Warm Shadows */
+    --shadow-card: 0 1px 3px 0 hsl(340 30% 25% / 0.06), 0 1px 2px 0 hsl(340 82% 62% / 0.04);
+    --shadow-lg: 0 10px 15px -3px hsl(340 30% 25% / 0.08), 0 4px 6px -2px hsl(340 82% 62% / 0.04);
+    --shadow-xl: 0 20px 25px -5px hsl(340 30% 25% / 0.08), 0 10px 10px -5px hsl(340 82% 62% / 0.03);
+    --shadow-premium: 0 8px 30px -12px hsl(340 82% 62% / 0.3), 0 2px 8px -2px hsl(350 90% 70% / 0.08);
+    --shadow-glow: 0 0 0 1px hsl(340 82% 62% / 0.25), 0 4px 16px 0 hsl(340 82% 62% / 0.15), 0 0 40px 0 hsl(25 100% 80% / 0.1);
+    --shadow-soft: 0 2px 4px -1px hsl(340 30% 25% / 0.04), 0 1px 2px -1px hsl(340 82% 62% / 0.03);
+
+    --radius: 0.75rem;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-poppins antialiased;
+    background:
+      radial-gradient(ellipse at top, hsl(340 100% 98%) 0%, transparent 70%),
+      radial-gradient(ellipse at bottom right, hsl(25 100% 95%) 0%, transparent 70%),
+      radial-gradient(ellipse at bottom left, hsl(345 100% 97%) 0%, transparent 60%),
+      linear-gradient(to bottom, hsl(0 0% 100%), hsl(340 40% 99%));
+  }
+
+  /* Typography Classes */
+  .font-inter {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  }
+
+  .font-poppins {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  }
+
+  .font-cormorant {
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .font-great-vibes {
+    font-family: 'Great Vibes', cursive;
+  }
+
+  .font-dancing {
+    font-family: 'Dancing Script', cursive;
+  }
+
+  /* Romantic text styles */
+  .romantic-heading {
+    @apply font-dancing text-primary;
+    text-shadow: 0 2px 8px hsl(340 82% 62% / 0.15);
+  }
+
+  .romantic-title {
+    @apply font-great-vibes text-primary;
+    text-shadow: 0 2px 12px hsl(340 82% 62% / 0.2);
+  }
+
+  /* Heart decorations */
+  .heart-accent::before {
+    content: '♥';
+    color: hsl(var(--primary));
+    margin-right: 0.5rem;
+    animation: heartbeat 1.5s ease-in-out infinite;
+  }
+
+  .heart-accent::after {
+    content: '♥';
+    color: hsl(var(--primary));
+    margin-left: 0.5rem;
+    animation: heartbeat 1.5s ease-in-out infinite;
+  }
+
+  .hearts-bg {
+    position: relative;
+  }
+
+  .hearts-bg::before {
+    content: '♥ ♥ ♥';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: hsl(var(--primary) / 0.1);
+    font-size: 2rem;
+    pointer-events: none;
+  }
+
+  @keyframes heartbeat {
+    0%, 100% {
+      transform: scale(1);
+    }
+    25% {
+      transform: scale(1.1);
+    }
+    50% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* Smooth animations */
+  * {
+    transition: all 0.2s ease-in-out;
+  }
+
+  *:focus {
+    outline: none;
+    box-shadow: var(--shadow-glow);
+  }
+}
+
+@layer components {
+  /* Premium Gradients */
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-masculine {
+    background: var(--gradient-masculine);
+  }
+
+  .gradient-feminine {
+    background: var(--gradient-feminine);
+  }
+
+  .gradient-romantic {
+    background: var(--gradient-romantic);
+  }
+
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .gradient-premium {
+    background: var(--gradient-premium);
+  }
+
+  .gradient-overlay {
+    background: var(--gradient-overlay);
+  }
+
+  /* Refined Shadows */
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-lg-custom {
+    box-shadow: var(--shadow-lg);
+  }
+
+  .shadow-xl-custom {
+    box-shadow: var(--shadow-xl);
+  }
+
+  .shadow-premium {
+    box-shadow: var(--shadow-premium);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  /* Premium Card Styles */
+  .card-premium {
+    @apply bg-white border border-border shadow-card backdrop-blur-sm relative overflow-hidden;
+  }
+
+  .card-premium::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--gradient-romantic);
+    opacity: 0.3;
+  }
+
+  /* Elegant Buttons */
+  .btn-primary {
+    @apply bg-primary hover:bg-primary/90 text-primary-foreground shadow-premium;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary hover:bg-secondary/90 text-secondary-foreground shadow-soft;
+  }
+
+  /* Rating Buttons */
+  .rating-button {
+    @apply w-full p-4 text-left rounded-xl border border-border bg-white hover:border-primary hover:shadow-soft transition-all duration-200 relative overflow-hidden;
+  }
+
+  .rating-button-selected {
+    @apply border-primary shadow-premium bg-gradient-to-r from-primary to-primary/90 text-white;
+  }
+
+  .rating-button-selected::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-top: 20px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .compatibility-green {
+    color: hsl(var(--compatibility-green));
+  }
+
+  .compatibility-yellow {
+    color: hsl(var(--compatibility-yellow));
+  }
+
+  .compatibility-red {
+    color: hsl(var(--compatibility-red));
+  }
+
+  .bg-compatibility-green {
+    background-color: hsl(var(--compatibility-green));
+  }
+
+  .bg-compatibility-yellow {
+    background-color: hsl(var(--compatibility-yellow));
+  }
+
+  .bg-compatibility-red {
+    background-color: hsl(var(--compatibility-red));
+  }
+
+  .bg-compatibility-green-light {
+    background-color: hsl(var(--success-light));
+  }
+
+  .bg-compatibility-yellow-light {
+    background-color: hsl(var(--warning-light));
+  }
+
+  .bg-compatibility-red-light {
+    background-color: hsl(var(--destructive-light));
+  }
+}
